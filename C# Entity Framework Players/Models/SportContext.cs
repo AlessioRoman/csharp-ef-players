@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityFramework
 {
-    public class PlayerContext : DbContext
+    public class SportContext : DbContext
     {
         public DbSet<Player> Players { get; set; }
         public DbSet<Team> Teams { get; set; }

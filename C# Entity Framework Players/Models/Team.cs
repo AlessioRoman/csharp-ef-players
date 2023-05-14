@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,12 +12,16 @@ namespace EntityFramework
     {
         [Key]
         public int TeamId { get; set; }
+
         [MaxLength(20)]
         public string Name { get; set; }
+
         [MaxLength(20)]
         public string City { get; set; }
+
         [MaxLength(20)]
         public string Coach { get; set; }
+
         [MaxLength(40)]
         public string Colors { get; set; }
 
@@ -30,6 +35,11 @@ namespace EntityFramework
             Coach = coach;
             Colors = colors;
             Players = new List<Player>();
+        }
+        
+        public void AddPlayer(Player newPlayer)
+        {
+            Players.Add(newPlayer);
         }
     }
 }
